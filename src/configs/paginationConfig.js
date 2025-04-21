@@ -1,20 +1,10 @@
 // src/configs/paginationConfig.js
-const paginationConfig = {
-  showFirstLastButtons: true,
-  showPrevNextButtons: true,
-  maxVisibleButtons: 5,
-  buttonLabels: {
-    first: "Previous",
-    previous: "Previous",
-    next: "Next",
-    last: "Next"
-  },
-  responsive: {
-    mobile: {
-      maxVisibleButtons: 3,
-      showFirstLastButtons: false
-    }
-  }
+export const defaultPaginationConfig = {
+  itemsPerPage: 15,
+  showPageNumbers: true,
+  showPrevNext: true,
+  showFirstLast: true,
+  showTotal: true
 };
 
-export default paginationConfig;
+export default defaultPaginationConfig;

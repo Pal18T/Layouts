@@ -5,7 +5,7 @@ import { filterTabsConfig } from '../../configs/layoutConfig';
 import Chip from '../chip/Chip';
 
 
-const FilterTabs = ({ config = filterTabsConfig, onTabChange, className = '' }) => {
+const FilterTabs = ({ config = filterTabsConfig, onTabChange, className = '', tabCounts = {} }) => {
   const [activeTab, setActiveTab] = useState(config.defaultTab);
   const navigate = useNavigate();
 
@@ -31,12 +31,14 @@ const FilterTabs = ({ config = filterTabsConfig, onTabChange, className = '' }) 
           elevated={activeTab === tab.value ? true : false}
           clickable
           variant={activeTab === tab.value ? 'primary' : 'default'}
-          label={tab.name}
-          // className={`px-4 py-2 rounded-lg transition-all ${
-          //   activeTab === tab.value
-          //     ? 'bg-blue-500 text-white'
-          //     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          // }`}
+          label={
+            <span>
+              {tab.name}
+              {typeof tabCounts[tab.value] === 'number' && (
+                <span style={{ marginLeft: 6, fontWeight: 'bold' }}>({tabCounts[tab.value]})</span>
+              )}
+            </span>
+          }
           className={`${activeTab === tab.value ? 'font-medium' : ''} text-blue-600`}
         />
          //</Chip> {tab.name}
@@ -66,6 +68,7 @@ FilterTabs.propTypes = {
   }),
   onTabChange: PropTypes.func,
   className: PropTypes.string,
+  tabCounts: PropTypes.object,
 };
 
 export default FilterTabs;
