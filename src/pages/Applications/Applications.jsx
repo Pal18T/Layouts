@@ -10,9 +10,6 @@ function Applications () {
             tabsConfig={{
                 tabs: applicationsConfig.tabs,
                 defaultTab: 'all',
-                position: 'top',
-                size: 'large',
-                theme: 'light'
             }}
             items={applicationsConfig.items}
         >

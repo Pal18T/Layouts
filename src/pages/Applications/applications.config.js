@@ -15,28 +15,28 @@ export default {
             value: 'draft',
             endpoint: `/leads/lead?status=all`,
             navigate: true,
-            navURL: '/applications/all',
+            navURL: '/applications/draft',
         },
         {
             name: 'Payment Pending',
             value: 'paymentPending',
             endpoint: `/leads/lead?status=all`,
             navigate: true,
-            navURL: '/applications/all',
+            navURL: '/applications/paymentPending',
         },
         {
             name: 'Converted',
             value: 'converted',
             endpoint: `/leads/lead?status=all`,
             navigate: true,
-            navURL: '/applications/all',
+            navURL: '/applications/converted',
         },
         {
             name: 'Rejected',
             value: 'rejected',
             endpoint: `/leads/lead?status=all`,
             navigate: true,
-            navURL: '/applications/all',
+            navURL: '/applications/rejected',
         }
     ]
 }
