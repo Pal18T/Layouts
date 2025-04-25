@@ -1,6 +1,7 @@
 import React from "react";
 import MasterLayout from '../../components/layout/MasterLayout'
 import applicationsConfig from "./applications.config";
+import DataViewCard from "./components/DataViewCard";
 
 function Applications () {
     return (
@@ -15,10 +16,18 @@ function Applications () {
                 theme: 'light'
             }}
             items={applicationsConfig.items}
+            Card={<DataViewCard></DataViewCard>}
         >
-            {applicationsConfig.items.map((item, index) => (
-                <p key={index}>Hello World 2</p>
-            ))}
+            {/* <div className="flex flex-row flex-wrap">
+            {
+                applicationsConfig.items.map((item, index) => (
+                    <div className="max-w-2xl p-2">
+                        <DataViewCard></DataViewCard>
+                    </div>
+                ))
+            }
+            </div> */}
+            
             
         </MasterLayout>
     );

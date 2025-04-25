@@ -132,14 +132,30 @@ const MasterLayout = ({
             )}
 
             <div className="p-4">
-              <ContentRenderer
+              {/* <p>{JSON.stringify(items)}</p> */}
+              {
+                items.map((item,index) => {
+                  return (
+                    <ContentRenderer
+                      key={item.proposalId}
+                      Card={Card}
+                      component={component}
+                      render={render}
+                      item={item}
+                    >
+                      {children}
+                    </ContentRenderer>
+                  );
+                })
+              }
+              {/* <ContentRenderer
                 Card={Card}
                 component={component}
                 render={render}
                 items={currentItems}
               >
                 {children}
-              </ContentRenderer>
+              </ContentRenderer> */}
             </div>
 
             {pagination && (
